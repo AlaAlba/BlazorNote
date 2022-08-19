@@ -1,0 +1,18 @@
+﻿@page "/button"
+
+<h1>Button Page</h1>
+
+<!--@@onclick="イベント名"でクリックイベント-->
+<button class="@ButtonClass" @onclick="ChangeButtonTitleAndClass">@ButtonTitle</button>
+
+@code {
+    private string ButtonTitle = "Click me";
+    private string ButtonClass = "btn btn-primary";
+    private void ChangeButtonTitleAndClass()
+    {
+        // ON <-> OFF とボタンの色を変更
+        ButtonTitle = ButtonTitle == "ON" ? "OFF" : "ON";
+        ButtonClass = ButtonClass == "btn btn-outline-primary" ?
+            "btn btn-outline-secondary" : "btn btn-outline-primary";
+    }
+}

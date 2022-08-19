@@ -8,15 +8,36 @@
 
 <h3>条件文</h3>
 
-<!--@@if で記述可能-->
+<!--@@if で記述-->
 @if (checkedValue == true)
 {
     <p>Toggle ON</p>
-} else
+}
+else
 {
     <p>Toggle OFF</p>
 }
 
+<h3>繰り返し処理</h3>
+<!--@@foreachで記述-->
+<ul>
+    @foreach (var item in items)
+    {
+        <li>@item</li>
+    }
+</ul>
+
 @code {
+    // トグル
     private bool checkedValue;
+
+    // 繰り返し処理用サンプルデータ
+    private List<string> items = new List<string>()
+    {
+        "item1",
+        "item2",
+        "item3",
+        "item4",
+    };
 }
+

@@ -1,0 +1,16 @@
+﻿@page "/event"
+
+<h1>Event Handler Page</h1>
+
+<!--ボタンのクリックイベントの listen -->
+<!--https://docs.microsoft.com/ja-jp/dotnet/architecture/blazor-for-web-forms-developers/components-->
+
+<!--Blazor では @@on{event} という形式のディレクティブ属性を使用して登録できる-->
+<button @onclick="OnClick">Click me!</button>
+
+@code {
+    void OnClick(MouseEventArgs e)
+    {
+        Console.WriteLine($"Mouse clicked at {e.ScreenX}, {e.ScreenY}.");
+    }
+}

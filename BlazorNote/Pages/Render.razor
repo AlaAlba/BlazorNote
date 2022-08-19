@@ -1,0 +1,22 @@
+﻿@page "/render"
+
+<h1>Render Page</h1>
+
+<h2>レンダリング</h2>
+
+<label><input type="checkbox" data-toggle="toggle" @bind="checkedValue">サンプルトグル</label>
+
+<h3>条件文</h3>
+
+<!--@@if で記述可能-->
+@if (checkedValue == true)
+{
+    <p>Toggle ON</p>
+} else
+{
+    <p>Toggle OFF</p>
+}
+
+@code {
+    private bool checkedValue;
+}
